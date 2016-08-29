@@ -3,11 +3,13 @@
 
   angular.module("services", [])
           .factory("userService", userService)
+          .factory("rankService", rankService)
           .service("personService", Person)
           .service("localstorageService", localstorageService)
           .provider("userGreetingService", userGreetingService)
           .constant("defaultGreeting", "Hi")
           .constant("officialGreeting", "Good morning")
+          .constant("defaultRankingSymbol", "*")
           .value("userName", "Vitali");
 
   function userGreetingService(defaultGreeting){
@@ -78,6 +80,29 @@
       get,
       remove,
       clear
+    };
+  }
+
+  function rankService(defaultRankingSymbol) {
+
+    function getRank(count, symbol = defaultRankingSymbol) {
+      let rank = symbol;
+      if(count > 100){
+        rank = rank + symbol;
+        if(count > 200) {
+            rank = rank + symbol;
+            if(count > 500){
+              rank = rank + symbol;
+              if(count > 1000 )
+                rank = rank + symbol;
+            }
+        }
+      }
+      return rank;
+    }
+
+    return{
+      getRank
     };
   }
 

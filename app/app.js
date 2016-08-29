@@ -8,11 +8,10 @@
 
 
     function configApp(userGreetingServiceProvider, officialGreeting) {
-      console.log(userGreetingServiceProvider);
       userGreetingServiceProvider.configGreeting(officialGreeting);
     }
 
-    function Simple(userService, personService, userGreetingService, userName, localstorageService){
+    function Simple(userService, personService, userGreetingService, userName, localstorageService, rankService){
         // console.log(userService);
         // userService.setCurrentUser("Vitali");
         // console.log(userService.getCurrentUser());
@@ -21,11 +20,13 @@
         // // console.log(personService.getAge());
         // console.log(userGreetingService);
         // userGreetingService.greet(userName);
-          console.log(localstorageService);
-          localstorageService.put("name", "Valentyn");
-          console.log(localstorageService.get("name"));
-          localstorageService.remove("name");
-          console.log(localstorageService.get("name"));
+          // console.log(localstorageService);
+          // localstorageService.put("name", "Valentyn");
+          // console.log(localstorageService.get("name"));
+          // localstorageService.remove("name");
+          // console.log(localstorageService.get("name"));
+        console.log(rankService.getRank(500, "+"));
+        console.log(rankService.getRank(1001));
     }
 
 })();
