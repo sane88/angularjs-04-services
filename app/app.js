@@ -14,7 +14,7 @@
 
     function Simple(userService, personService, userGreetingService, userName){
         console.log(userService);
-        userService.setCurrentUser("Vitalia");
+        userService.setCurrentUser("Vitali");
         console.log(userService.getCurrentUser());
         // console.log(personService);
         // personService.setAge(16);
