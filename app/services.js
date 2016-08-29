@@ -4,6 +4,7 @@
   angular.module("services", [])
           .factory("userService", userService)
           .service("personService", Person)
+          .service("localstorageService", localstorageService)
           .provider("userGreetingService", userGreetingService)
           .constant("defaultGreeting", "Hi")
           .constant("officialGreeting", "Good morning")
@@ -49,6 +50,34 @@
     return {
       getCurrentUser,
       setCurrentUser
+    };
+  }
+
+  function localstorageService($window) {
+
+    function put(key, value) {
+      $window.localStorage.setItem(key, value);
+      return this;
+    }
+
+    function get(key) {
+      return $window.localStorage.getItem(key);
+    }
+
+    function remove(key) {
+      $window.localStorage.removeItem(key);
+      return this;
+    }
+
+    function clear() {
+      $window.localStorage.clear();
+      return this;
+    }
+    return {
+      put,
+      get,
+      remove,
+      clear
     };
   }
 
