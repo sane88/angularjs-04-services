@@ -13,7 +13,7 @@
       userGreetingServiceProvider.configGreeting(officialGreeting);
     }
 
-    function Simple(userService, personService, userGreetingService, userName, localstorageService, rankService, $log){
+    function Simple(userService, personService, userGreetingService, userName, localstorageService, rankService, generator, $log){
         // console.log(userService);
         // userService.setCurrentUser("Vitali");
         // console.log(userService.getCurrentUser());
@@ -29,12 +29,13 @@
           // console.log(localstorageService.get("name"));
         // console.log(rankService.getRank(500, "+"));
         // console.log(rankService.getRank(1001));
-        $log.log('log');
-        $log.warn('warn');
-        $log.info('info');
-        $log.error('error');
-        $log.debug('debug');
-        $log.myLog('myLog');
+        // $log.log('log');
+        // $log.warn('warn');
+        // $log.info('info');
+        // $log.error('error');
+        // $log.debug('debug');
+        // $log.myLog('myLog');
+        console.log(generator.generate(7));
     }
 
 })();

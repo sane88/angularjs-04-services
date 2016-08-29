@@ -6,6 +6,7 @@
           .factory("rankService", rankService)
           .service("personService", Person)
           .service("localstorageService", localstorageService)
+          .service("generator", generator)
           .provider("userGreetingService", userGreetingService)
           .constant("defaultGreeting", "Hi")
           .constant("officialGreeting", "Good morning")
@@ -106,4 +107,19 @@
     };
   }
 
+function generator() {
+
+  function generate(length) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < length; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+  }
+  return {
+    generate
+  }
+}
 })();
