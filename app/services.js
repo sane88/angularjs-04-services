@@ -8,7 +8,7 @@
           .provider("userGreetingService", userGreetingService)
           .constant("defaultGreeting", "Hi")
           .constant("officialGreeting", "Good morning")
-          .value("userName", "Vitalia");
+          .value("userName", "Vitali");
 
   function userGreetingService(defaultGreeting){
     let greetingMsg = defaultGreeting;
