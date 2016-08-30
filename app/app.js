@@ -13,7 +13,7 @@
       userGreetingServiceProvider.configGreeting(officialGreeting);
     }
 
-    function Simple(userService, personService, userGreetingService, userName, localstorageService, rankService, generator, $log){
+    function Simple(userService, personService, userGreetingService, userName, localstorageService, rankService, generator, matchService, $log){
         // console.log(userService);
         // userService.setCurrentUser("Vitali");
         // console.log(userService.getCurrentUser());
@@ -35,7 +35,9 @@
         // $log.error('error');
         // $log.debug('debug');
         // $log.myLog('myLog');
-        console.log(generator.generate(7));
+        // console.log(generator.generate(7));
+        console.log(matchService.matches('test', /\w/));
+        console.log(matchService.matches('&', /\w/));
     }
 
 })();

@@ -8,6 +8,7 @@
           .service("localstorageService", localstorageService)
           .service("generator", generator)
           .provider("userGreetingService", userGreetingService)
+          .factory("matchService", matchService)
           .constant("defaultGreeting", "Hi")
           .constant("officialGreeting", "Good morning")
           .constant("defaultRankingSymbol", "*")
@@ -120,6 +121,15 @@ function generator() {
   }
   return {
     generate
+  }
+}
+
+function matchService() {
+  function matches(string, regex) {
+    return string.match(regex) != null;
+  }
+  return{
+    matches
   }
 }
 })();
